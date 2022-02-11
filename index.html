@@ -24,7 +24,7 @@
 
                 <ul>
                     <li v-for="(item, index) in items">
-                       {{item}}
+                       <span @click="textLine(index)" :class="done==true?'done':''">{{item}}</span>
                        <i class="fa-solid fa-x" @click="removeTask(index)"></i>
                     </li>
                 </ul>
