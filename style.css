@@ -19,7 +19,7 @@ header{
 
 #list-container{
     width: 1200px;
-    height: 500px;
+    min-height: 500px;
     background-color: chocolate;
     margin: 50px auto;
 }
@@ -32,7 +32,21 @@ li{
     font-size: 30px;
 }
 
+li:hover{
+    background-color: lightblue;
+}
+
 .done{
     text-decoration: line-through;
     
+}
+
+i:hover{
+    color: white;
+}
+
+#empty{
+    text-align: center;
+    font-size: 50px;
+    padding-top: 100px;
 }

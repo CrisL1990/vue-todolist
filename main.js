@@ -7,15 +7,38 @@ const root = new Vue(
         data:{
             input: "",
 
-            done: false,
+           
 
-            items: ["Alzarsi", "Fare colazione", "Studiare"]
+            items: [
+                {
+                    testo:"Alzarsi",
+                    done: false
+                },
+
+                {
+                    testo:"Fare colazione",
+                    done: false
+                },
+
+                {
+                    testo:"Studiare",
+                    done: false
+                }
+            ]
         },
 
         methods: {
             addTask: function(){
+
                 if(this.input != ""){
-                    this.items.push(this.input);
+
+                    const newObject = {
+                        testo: this.input,
+                        done: false
+                    }
+
+                
+                    this.items.push(newObject);
                     this.input = "";  
                 }                
             },
@@ -26,8 +49,12 @@ const root = new Vue(
 
             textLine: function(index){
 
-                this.done = true;
-                
+               if(this.items[index].done == true){
+                    this.items[index].done = false;
+               }
+               else{
+                    this.items[index].done = true;
+               }
             }
 
            

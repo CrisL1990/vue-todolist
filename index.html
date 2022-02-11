@@ -21,10 +21,11 @@
 
         <main>
             <div id="list-container">
-
+                
+                <div id="empty" v-if="items.length == 0">NON CI SONO TASKS DA COMPLETARE</div>
                 <ul>
                     <li v-for="(item, index) in items">
-                       <span @click="textLine(index)" :class="done==true?'done':''">{{item}}</span>
+                       <span @click="textLine(index)" :class="(item.done == true) ? 'done' : '' ">{{item.testo}}</span>
                        <i class="fa-solid fa-x" @click="removeTask(index)"></i>
                     </li>
                 </ul>
