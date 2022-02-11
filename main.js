@@ -9,8 +9,16 @@ const root = new Vue(
 
         methods: {
             addTask: function(){
-                this.items.push(this.input);
-                this.input = "";        
+
+                if(this.input != ""){
+                    this.items.push(this.input);
+                    this.input = "";  
+                }
+                      
+            },
+
+            removeTask: function(index){
+                this.items.splice(index, 1);
             }
         }
     }

@@ -23,8 +23,10 @@
             <div id="list-container">
 
                 <ul>
-                   <li v-for="(item, index) in items">{{item}}</li>
-                   
+                    <li v-for="(item, index) in items">
+                       {{item}}
+                       <i class="fa-solid fa-x" @click="removeTask(index)"></i>
+                    </li>
                 </ul>
 
             </div>
